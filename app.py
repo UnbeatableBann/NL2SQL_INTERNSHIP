@@ -7,13 +7,10 @@ from flask_cors import CORS
 import atexit
 from dotenv import load_dotenv
 import re
-import pytesseract
-from PIL import Image
 import matplotlib.pyplot as plt, matplotlib
 import io
 import base64
 import random
-import pdfplumber
 from openai import OpenAI
 
 # Initialize Flask App
