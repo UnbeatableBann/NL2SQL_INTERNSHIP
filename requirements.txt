@@ -8,5 +8,4 @@ openai
 google-generativeai
 flask-cors
 streamlit
-atexit
 matplotlib
