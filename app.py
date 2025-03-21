@@ -17,7 +17,7 @@ import pdfplumber
 from openai import OpenAI
 
 # Initialize Flask App
-app = Flask(__name__)
+app = Flask(__name__, static_folder="static", template_folder="templates")
 
 
 # Enable CORS
@@ -47,6 +47,11 @@ metadata_store = {}
 @app.route("/")
 def home():
     return render_template("index.html")
+
+# Serve static files (JS, CSS)
+@app.route('/static/<path:path>')
+def serve_static(path):
+    return send_from_directory("static", path)
 
 # Upload a dataset to MotherDuck from a CSV file
 @app.route("/upload", methods=["POST"])
