@@ -1,0 +1,10 @@
+flask
+python-dotenv
+gunicorn
+requests
+duckdb
+pandas
+openai
+google-generativeai
+flask-cors
+streamlit

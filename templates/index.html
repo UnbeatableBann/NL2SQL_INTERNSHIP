@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analysis Platform</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'styles.css')}}">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>SQL Query Automation</h1>
+            <div class="header-actions">
+                <button id="darkModeToggle" class="icon-button">
+                    <span class="moon-icon">🌙</span>
+                    <span class="sun-icon">☀️</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+        <main>
+            <div class="chat-section">
+                <div id="chatMessages" class="chat-messages">
+                    <div class="welcome-message" id="welcomeMessage">
+                        <p>Welcome! Upload a dataset and start asking questions.</p>
+                    </div>
+                </div>
+                <form id="queryForm" class="query-form">
+                    <div class="input-group">
+                        <input 
+                            type="text" 
+                            id="queryInput" 
+                            placeholder="Ask a question about your data..."
+                            required
+                        >
+                        <label class="upload-btn-inline">
+                            <span>📁</span>
+                            <input type="file" id="fileInput" accept=".csv,.json,.xlsx" multiple>
+                        </label>
+                        <button type="submit" class="send-button">
+                            <span>➤</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+    <div id="loadingAnimation" class="loading-overlay">
+        <div class="loader"></div>
+        <p>Uploading...</p>
+    </div>
+    
+</body>
+</html>
